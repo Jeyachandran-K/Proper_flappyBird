@@ -10,6 +10,7 @@ public class PipeSpawner : MonoBehaviour
     private float timer;
     private bool isPlay;
     
+    
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class PipeSpawner : MonoBehaviour
     {
         if (isPlay)
         {
-            if (timer > 2f)
+            if (timer > 1.5f)
             {
                 timer = 0;
                 Instantiate(pipe, new Vector3(transform.position.x, Random.Range(-minHeight, minHeight), 0), Quaternion.identity);

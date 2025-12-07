@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {  get; private set; }
     private int score;
     private static int highScore;
+    private float gameTime;
 
     private void Awake()
     {
@@ -18,6 +19,10 @@ public class GameManager : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         Bird.Instance.OnPassingPipe += Instance_OnPassingPipe;
         Bird.Instance.OnHittingPipe += Instance_OnHittingPipe;
+    }
+    private void Update()
+    {
+        gameTime += Time.deltaTime;
     }
 
     private void Instance_OnHittingPipe(object sender, System.EventArgs e)
@@ -47,5 +52,9 @@ public class GameManager : MonoBehaviour
         }
         highScore =PlayerPrefs.GetInt("HighScore", 0);
         
+    }
+    public float GetGameTime()
+    {
+        return gameTime;
     }
 }

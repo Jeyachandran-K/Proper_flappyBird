@@ -6,7 +6,7 @@ public class Bird : MonoBehaviour
 {
     public static Bird Instance { get; private set; }
 
-    private const float GRAVITY_NORMAL = 1f;
+    private const float GRAVITY_NORMAL = 0.8f;
     public enum State 
     { 
         WaitingToStart,
